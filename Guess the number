@@ -1,0 +1,28 @@
+# Import a random number :
+import random
+num = random.randint(1,100)
+
+# Welcome message and brief explanation of the game.
+name = input("Enter your name : ")
+print(f"Hi {name}!!\nYou will have to guess the correct number within 5 attempts.\nOtherwise you will loose.")
+print("The number must be in between 1 and 100.\nAll the best.\nLet's start!")
+
+''' Code to provide 5 attempts to the user or player.
+	He/She has to guess the correct number in 5 attempts. 
+	After 5 unsuccessful attempts the code will the corrct number.'''
+
+attempts = 0 
+while attempts < 5 :
+	a = int(input("Guess the number between 1 and 100 : "))
+	attempts += 1
+	if a < num :
+		print("Guess a 'HIGHER' number.")
+	elif a > num :
+		print("Guess a 'LOWER' number.")
+	elif a > 100 or a < 1 :
+		print("Guess a number in the range of 1 and 100.")
+	else :
+		print(f"Congrats!! You guessed it!!\nThe number is {num}.")
+		break
+else :
+	print(f"You have failed to guess the number in 5 attempts:(\nThe number is {num}.")
